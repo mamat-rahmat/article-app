@@ -13,10 +13,18 @@ export default function AuthButton() {
     if (session) {
         return (
             <div className="flex items-center gap-4">
-                <p>Welcome, {session.user?.name || session.user?.email}!</p>
+                <Link
+                    href="/dashboard"
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors"
+                >
+                    Dashboard
+                </Link>
+                <span className="text-gray-600">
+                    {session.user?.name || session.user?.email}
+                </span>
                 <button
                     onClick={() => signOut()}
-                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition-colors"
                 >
                     Sign out
                 </button>
@@ -28,13 +36,13 @@ export default function AuthButton() {
         <div className="flex gap-4">
             <Link
                 href="/auth/signin"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors"
             >
                 Sign In
             </Link>
             <Link
                 href="/auth/register"
-                className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition-colors"
             >
                 Register
             </Link>

@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Project - Jabar Digital Academy
 
-## Getting Started
+Proyek ini dibuat untuk memenuhi tugas **Jabar Digital Academy** pertemuan ke-8
 
-First, run the development server:
+## 📋 Tugas Pertemuan Ke-8
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Persyaratan yang Dipenuhi:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- ✅ Menggunakan NextAuth.js sebagai solusi otentikasi utama.
+- ✅ Mengimplementasikan middleware untuk membatasi akses ke halaman tertentu hanya bagi user yang telah login.
+- ✅ Halaman login dengan metode autentikasi (Email & Password).
+- ✅ halaman register agar user bisa mendaftarkan diri ke aplikasi.
+- ✅Memiliki minimal 2 halaman yang:
+  - Halaman A: Terbuka untuk umum seperti landing page (tidak perlu login)
+    ![home](screenshots/home.png)
+  - Halaman B: Hanya bisa diakses jika user sudah login (dilindungi dengan middleware)
+    ![home](screenshots/dashboard.png)
+- ✅Menampilkan informasi user yang sedang login (nama/email) di halaman B.
+- ✅ Mengimplementasikan sign in dan sign out menggunakan NextAuth.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Teknologi yang Digunakan
 
-## Learn More
+- **Next.js 15** - React framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **NextAuthJS** - Authentication
+- **SQLite** - Database
+- **Prisma** - ORM
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Cara Menjalankan Project
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Clone repository**
+   ```bash
+   git clone <repository-url>
+   cd <project-folder>
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+3. **Buat file .env dan .env.local**
+   ```bash
+   NEXTAUTH_URL=http://localhost:3000
+   NEXTAUTH_SECRET=your-auth-secret
+   DATABASE_URL="file:./dev.db"
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Setup database**
+   ```bash
+   npx prisma migrate dev --name init
+   npx prisma generate
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. **Jalankan development server**
+   ```bash
+   npm run dev
+   ```
+
+6. **Buka browser**
+   ```
+   http://localhost:3000
+   ```
+
+## 👨‍💻 Pengembang
+
+Dibuat oleh **Mamat Rahmat** untuk tugas Jabar Digital Academy
+
+*Proyek ini dikembangkan sebagai bagian dari program Jabar Digital Academy untuk mempelajari Next.js dan pengembangan web modern.*
